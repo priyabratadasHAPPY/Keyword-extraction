@@ -11,11 +11,12 @@ def keywordnew(content):
     return result
 
 # Streamlit app title and subtitle
-st.title("Keyword Extraction App")
-st.subheader("Extract key phrases from your text using a custom-trained model")
+st.title("Blog Keyword Extraction Tool")
+st.subheader("Find the best keywords for your blog posts")
 
 # Input text area for user query
-question = st.text_area("Enter your text here:")
+st.write("Enter your blog content below to extract key phrases that can help you optimize your posts for search engines.")
+question = st.text_area("Enter your blog content here:")
 
 # Submit button
 if st.button('Submit'):
@@ -23,11 +24,11 @@ if st.button('Submit'):
         result = keywordnew(question)
         st.subheader("Extracted Key Phrases:")
         st.write(result)
+        st.info("Use these key phrases to optimize your blog posts and improve your search engine rankings.")
     else:
         st.error("Please enter some text to extract key phrases!")
 else:
-    st.info("Enter text and click 'Submit' to extract key phrases.")
-
+    st.info("Enter your blog content and click 'Submit' to extract key phrases.")
 
 
 # import streamlit as st
